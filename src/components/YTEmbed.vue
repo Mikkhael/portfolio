@@ -23,7 +23,7 @@ const aspect = computed(() => props.w / props.h);
 <template>
 
 <div class="yt_embed" ref="container">
-  <iframe  :src="url" :style="{aspectRatio: aspect, maxWidth: props.w + 'px'}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <!-- <iframe  :src="url" :style="{aspectRatio: aspect, maxWidth: props.w + 'px'}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
 </div>
 
 </template>

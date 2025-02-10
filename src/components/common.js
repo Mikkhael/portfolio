@@ -16,9 +16,20 @@ export function window_event_listen(name, handler) {
 }
 
 //@ts-ignore
-import LANG from "/src/langs/common.json";
+// import LANG from "/src/langs/common.json";
 
-export function use_lang() {
-    const lang = inject('lang');
-    return LANG[lang];
+/**
+ * @template T
+ * @param {import("./ProjectContent").LangSpecyfic<T>} [strings] 
+ * @returns {[import("./ProjectContent").Lang, T]}
+ */
+export function use_lang(strings) {
+    const lang = inject('lang') ?? 'en';
+    // return LANG[lang];
+    if(strings !== undefined) {
+        const res_strings = strings[lang] ?? strings['en'];
+        return [lang, res_strings];
+    }
+    //@ts-ignore
+    return [lang, undefined];
 }

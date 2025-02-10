@@ -2,34 +2,35 @@
 //@ts-check
 
 import { ref } from 'vue';
-import { computed } from 'vue';
 
 import {window_event_listen, use_lang} from './common';
 
-const LANG = use_lang();
+const [lang, strings] = use_lang({
+  'en': {
+    show_more: 'Show more',
+    show_less: 'Show less',
+  },
+  'pl': {
+    show_more: 'Pokaż więcej',
+    show_less: 'Pokaż mniej',
+  }
+});
 
 /**
- * @typedef {{href: string, type: 'github' | 'thesis' | 'slides'}} LinkDef
+ * @typedef {{href: string, name: string}} LinkDef
  */
 
 const props = defineProps({
     title:    {type: String},
     subtitle: {type: String},
     tags:     {type: Array},
-    links:    {type: Array},
+    links:    {
+      /**@type {import('vue').PropType<LinkDef[]>} */ 
+      type: Array
+    },
 });
 
 // const tags_html = computed(() => (props.tags ?? []).map(x => `<span>${x}</span>`).join(', '));
-
-const links_parsed = computed(() => /**@type {LinkDef[]} */ (props.links ?? []).map(x => {
-  return {
-    href: x.href,
-    name: 
-      x.type === 'thesis' ? LANG.link_thesis :
-      x.type === 'slides' ? LANG.link_slides :
-                          "GitHub"
-  };
-}));
 
 function goto(href) {
   window.open(href, '_blank');
@@ -43,7 +44,7 @@ window_event_listen('extend_all_projects', (e) => {
   extend(e.value);
 });
 
-const extended = ref(false);
+const extended = ref(true);
 
 </script>
 
@@ -56,7 +57,7 @@ const extended = ref(false);
           </section>
 
           <section class="links">
-            <div v-for="link in links_parsed" class="link" @click="goto(link.href)">
+            <div v-for="link in props.links" class="link" @click="goto(link.href)">
               <div class="name">🔗{{ link.name }}</div>
               <a :href="link.href" target="_blank">{{ link.href }}</a>
             </div>
@@ -71,11 +72,11 @@ const extended = ref(false);
             <slot name="description" ></slot>
         </section>
 
-        <div class="extender button" @click="extend(!extended)">{{ extended ? 'Pokaż mniej...' : 'Pokaż więcej...' }}</div>
+        <div class="extender button" @click="extend(!extended)">{{ extended ? strings.show_less : strings.show_more }}...</div>
 
         <section class="contents" :class="{rolledup: !extended}">
             <slot name="contents"></slot>
-            <div class="extender button" @click="extend(false)">Pokaż mniej...</div>
+            <div class="extender button" @click="extend(false)">{{ strings.show_less }}...</div>
         </section>
 
     </div>
