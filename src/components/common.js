@@ -1,6 +1,26 @@
 import { inject, onMounted, onUnmounted } from "vue";
 
 
+/**
+ * @typedef {'en' | 'pl'} Lang
+ */
+
+/**
+ * @template T
+ * @typedef {{[k in Lang]?: T}} LangSpecyfic
+ */
+
+
+/**
+ * @template T
+ * @param {LangSpecyfic<T> | undefined | string} value
+ * @param {Lang} lang 
+ */
+export function get_lang(value, lang = 'en') {
+    if(typeof value !== 'object' ) return value;
+    return value[lang] ?? value['en'];
+}
+
 export function extend_all_projects(value = true) {
     const event = Object.assign(new Event('extend_all_projects'), {value});
     window.dispatchEvent(event);

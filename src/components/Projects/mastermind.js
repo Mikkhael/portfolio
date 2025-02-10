@@ -7,7 +7,7 @@ const content = new ProjectContent({
     },
     subtitle: {
         'en': "Bachelor's thesis",
-        'pl': "Praca Inzynierska",
+        'pl': "Praca Inżynierska",
     },
     tags: [
         "FPGA",

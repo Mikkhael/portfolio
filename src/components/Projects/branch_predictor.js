@@ -51,26 +51,42 @@ const content = new ProjectContent({
     },
     content: {
         'en': /*html*/`
-        The model was <b>integrated with an existing CPU project</b>, created as part of other master's theses. <br>
+        The module was <b>integrated with an existing CPU project</b>, created as part of other master's theses.
+        <br>
+        <br>
         I devoted a significant part of my work not only to creating the predictor, but also to <b>analyzing and repairing the RISC&#8209;V processor project</b>,
-        because it turned out to be <b>full of errors and inconsistencies with the provided documentation</b>. <br>
+        because it turned out to be <b>full of errors and inconsistencies with the provided documentation</b>.
+        <br>
+        <br>
         In addition to the predictor itself, an <b>extensive test environment</b> was created,
         allowing for fully automated programs compilation, running simulations, and creating reports.
         The environment consists of <b>scripts (written in JavaScript) and a Makefile file</b>, allowing for the selection of configuration,
-        with which variant of the predictor the project should be compiled, and which test programs to run. <br>
+        with which variant of the predictor the project should be compiled, and which test programs to run.
+        <br>
+        <br>
         Additionally, an <b>visualizer of processor internal signals</b> was created,
-        presenting an insight into its operation using an <b>HTML file</b>, divided into cycles and pipeline stages. <br>
+        presenting an insight into its operation using an <b>HTML file</b>, divided into cycles and pipeline stages.
+        <br>
+        <br>
+        A more detailed description of the project structure, and how could you run the project yourself, is over in GitHub's readme.
         `,
         'pl': /*html*/`
-        Model <b>zintegrowano z istniejącym już projektem procesora</b>, stworzonym w ramach innych prac magisterskich. <br>
+        Moduł <b>zintegrowano z istniejącym już projektem procesora</b>, stworzonym w ramach innych prac magisterskich.
         Znaczną część pracy poświęciłem nie tylko na tworzenie predyktora, ale na <b>analizę i naprawę projektu procesora RISC&#8209;V</b>,
-        gdyż okazał się on być <b>pełny błędów oraz niezgodności z dostarczoną dokumentacją</b>. <br>
+        gdyż okazał się on być <b>pełny błędów oraz niezgodności z dostarczoną dokumentacją</b>.
+        <br>
+        <br>
         Oprócz samego predtktora, stworzone zostało <b>rozbudowane środowisko testowe</b>, 
         pozwalające na w pełni zautomatyzowaną kompilację programów, uruchamianie symulacji oraz tworzenie raportów. 
         Na środowisko składają się <b>skrypty (napisane w języku JavaScript) oraz plik Makefile</b>, pozwalający na wybór konfiguracji, 
-        z jakim wariantem predyktora należy skompilować projekt, oraz który z programów testowych uruchomić. <br>
+        z jakim wariantem predyktora należy skompilować projekt, oraz który z programów testowych uruchomić.
+        <br>
+        <br>
         Dodatkowo, stworzono <b>wizualizator sygnałów wewnętrznych procesora</b>, 
-        prezentujący za pomocą <b>pliku HTML wgląd do jego działania</b>, z podziałem na cykle oraz etapy pipeline'u. <br>
+        prezentujący za pomocą <b>pliku HTML wgląd do jego działania</b>, z podziałem na cykle oraz etapy pipeline'u.
+        <br>
+        <br>
+        Bardziej rozbudowany opps struktury projektu, oraz jak można go uruchomić, znajduje się na GitHub'owym readme.
         `,
     }
 

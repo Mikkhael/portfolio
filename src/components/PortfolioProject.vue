@@ -87,7 +87,10 @@ const extended = ref(true);
 
 .portfolio_project {
   border: 3px solid gold;
-  border-radius: 10px;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  /* border-radius: 10px; */
   background-color: #262626;
   padding: 1ch;
   margin-bottom: 20px;

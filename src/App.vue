@@ -10,6 +10,8 @@ import PortfolioProject from './components/PortfolioProject.vue';
 import PortfolioProjectAuto from './components/PortfolioProjectAuto.vue';
 import Projects from './components/Projects';
 
+import CategoryElements from './components/CategoryElements.vue';
+import CatSections from './components/CatSections';
 
 import {extend_all_projects, use_lang} from './components/common';
 import { computed, ref } from 'vue';
@@ -37,7 +39,8 @@ const extend_all_text = computed(() => {
   else return strings.expand_all + '...';
 });
 
-const ProjectContents = Projects.map(x => x[1].get_for_lang(lang));
+const ProjectContents    = Projects.map(x => x[1].get_for_lang(lang));
+const CatSectionContents = CatSections.map(x => x[1].get_for_lang(lang));
 
 </script>
 
@@ -49,6 +52,9 @@ const ProjectContents = Projects.map(x => x[1].get_for_lang(lang));
 
   <Section_Header class="header" />
   <Section_OMnie />
+
+  <CategoryElements v-for="section in CatSectionContents" :title="section.title" :elems="section.elems"/>
+
 
   <h1 id="my_projects" class="subheader">
     {{ strings.my_projects }}

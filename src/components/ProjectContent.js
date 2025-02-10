@@ -1,11 +1,10 @@
 
 /**
- * @typedef {'pl' | 'en'} Lang
+ * @typedef {import('./common').Lang} Lang
  */
-
 /**
  * @template T
- * @typedef {{[k in Lang]?: T}} LangSpecyfic
+ * @typedef {import('./common').LangSpecyfic<T>} LangSpecyfic
  */
 
 /**
