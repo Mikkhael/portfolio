@@ -7,7 +7,7 @@ const content = new ProjectContent({
     },
     subtitle: {
         'en': "Bachelor's thesis",
-        'pl': "Praca inzynierska",
+        'pl': "Praca Inzynierska",
     },
     tags: [
         "FPGA",
@@ -19,9 +19,9 @@ const content = new ProjectContent({
         "Breadboard",
     ],
     links: [
-        { type: 'thesis', href: '/pdfs/Praca_Inżynierska_MichałGold_FPGA_Mastermind.pdf'},
-        { type: 'slides', href: '/pdfs/Prezentacja_Inz.pdf'},
-        { type: 'github', href: 'https://github.com/Mikkhael/FPGA_MasterMind'},
+        { type: 'thesis',  href: '/pdfs/Praca_Inżynierska_MichałGold_FPGA_Mastermind.pdf'},
+        { type: 'tslides', href: '/pdfs/Prezentacja_Inz.pdf'},
+        { type: 'github',  href: 'https://github.com/Mikkhael/FPGA_MasterMind'},
     ],
     imgs: [
         { src:  '/imgs/mastermind_hardware.png',

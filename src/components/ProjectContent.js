@@ -13,7 +13,7 @@
 */
 
 /**
- * @typedef {{href: string, type: 'github' | 'thesis' | 'slides'}} LinkDef
+ * @typedef {{href: string, type: 'github' | 'thesis' | 'slides' | 'tslides' | 'raport'}} LinkDef
  */
 
 /**
@@ -52,8 +52,10 @@ class ProjectContent {
             return {
                 href: x.href,
                 name: 
-                    x.type === 'thesis' ? (lang === 'pl' ? 'Praca Dyplomowa'   : 'Thesis') :
-                    x.type === 'slides' ? (lang === 'pl' ? 'Slajdy do p. dyp.' : 'Slides for thesis')  :
+                    x.type === 'thesis'  ? (lang === 'pl' ? 'Praca Dyplomowa'   : 'Thesis') :
+                    x.type === 'tslides' ? (lang === 'pl' ? 'Slajdy do p. dyp.' : 'Slides for thesis')  :
+                    x.type === 'slides'  ? (lang === 'pl' ? 'Slajdy' : 'Slides')  :
+                    x.type === 'raport'  ? (lang === 'pl' ? 'Sprawozdanie' : 'Raport')  :
                                         "GitHub"
             }
         });

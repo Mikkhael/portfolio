@@ -72,7 +72,7 @@ const extended = ref(true);
             <slot name="description" ></slot>
         </section>
 
-        <div class="extender button" @click="extend(!extended)">{{ extended ? strings.show_less : strings.show_more }}...</div>
+        <div class="extender button" @click="extend(!extended)" :class="{rolledup: extended}">{{ extended ? strings.show_less : strings.show_more }}...</div>
 
         <section class="contents" :class="{rolledup: !extended}">
             <slot name="contents"></slot>
@@ -169,11 +169,14 @@ h4 {margin: 0px;}
 }
 
 .description {
+  font-size: 1.1em;
   text-align: center;
 }
 
 .contents {
   text-align: justify;
+  margin-top: 5px;
+  border-top: 1px dashed gold;
   /* overflow-y: hidden; */
   /* max-height: 1000000px; */
   /* transition: max-height 1s; */

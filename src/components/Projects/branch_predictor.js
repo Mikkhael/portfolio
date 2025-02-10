@@ -21,9 +21,9 @@ const content = new ProjectContent({
         "Makefile",
     ],
     links: [
-        { type: 'thesis', href: '/pdfs/Michal_Gold_Praca_Magisterska_Predyktor.pdf'},
-        { type: 'slides', href: '/pdfs/Prezentacja_Mgr.pdf'},
-        { type: 'github', href: 'https://github.com/Mikkhael/polsl_riscv_mgr_stripped'},
+        { type: 'thesis',  href: '/pdfs/Michal_Gold_Praca_Magisterska_Predyktor.pdf'},
+        { type: 'tslides', href: '/pdfs/Prezentacja_Mgr.pdf'},
+        { type: 'github',  href: 'https://github.com/Mikkhael/polsl_riscv_mgr_stripped'},
     ],
     imgs: [
         { src:  '/imgs/pipeline_visualizer.png',
