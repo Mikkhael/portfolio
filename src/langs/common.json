@@ -1,0 +1,10 @@
+{
+    "pl": {
+        "link_thesis": "Praca Dyplomowa",
+        "link_slides": "Slajdy do p. dypl."
+    },
+    "en": {
+        "link_thesis": "Thesis",
+        "link_slides": "Slides for thesis"
+    }
+}

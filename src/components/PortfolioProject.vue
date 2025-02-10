@@ -1,0 +1,186 @@
+<script setup>
+//@ts-check
+
+import { ref } from 'vue';
+import { computed } from 'vue';
+
+import {window_event_listen, use_lang} from './common';
+
+const LANG = use_lang();
+
+/**
+ * @typedef {{href: string, type: 'github' | 'thesis' | 'slides'}} LinkDef
+ */
+
+const props = defineProps({
+    title:    {type: String},
+    subtitle: {type: String},
+    tags:     {type: Array},
+    links:    {type: Array},
+});
+
+// const tags_html = computed(() => (props.tags ?? []).map(x => `<span>${x}</span>`).join(', '));
+
+const links_parsed = computed(() => /**@type {LinkDef[]} */ (props.links ?? []).map(x => {
+  return {
+    href: x.href,
+    name: 
+      x.type === 'thesis' ? LANG.link_thesis :
+      x.type === 'slides' ? LANG.link_slides :
+                          "GitHub"
+  };
+}));
+
+function goto(href) {
+  window.open(href, '_blank');
+}
+
+function extend(value) {
+  extended.value = value;
+}
+
+window_event_listen('extend_all_projects', (e) => {
+  extend(e.value);
+});
+
+const extended = ref(false);
+
+</script>
+
+<template>
+    <div class="portfolio_project">
+        <header>
+          <section class="title">
+            <h3>{{ props.title }}</h3>
+            <h4>{{ props.subtitle }}</h4>
+          </section>
+
+          <section class="links">
+            <div v-for="link in links_parsed" class="link" @click="goto(link.href)">
+              <div class="name">🔗{{ link.name }}</div>
+              <a :href="link.href" target="_blank">{{ link.href }}</a>
+            </div>
+          </section>
+
+          <!-- <section class="tags" v-html="tags_html"></section> -->
+          <section class="tags"> {{ props.tags?.join(', ') }} </section>
+
+        </header>
+
+        <section class="description">
+            <slot name="description" ></slot>
+        </section>
+
+        <div class="extender button" @click="extend(!extended)">{{ extended ? 'Pokaż mniej...' : 'Pokaż więcej...' }}</div>
+
+        <section class="contents" :class="{rolledup: !extended}">
+            <slot name="contents"></slot>
+            <div class="extender button" @click="extend(false)">Pokaż mniej...</div>
+        </section>
+
+    </div>
+
+</template>
+
+<style scoped>
+
+.portfolio_project {
+  border: 3px solid gold;
+  border-radius: 10px;
+  background-color: #262626;
+  padding: 1ch;
+  margin-bottom: 20px;
+}
+
+header {
+  display: grid;
+  grid-template-areas: 
+    "header links"
+    "tags   links";
+}
+
+@media screen and (max-width: 900px) {
+  header {
+  grid-template-areas: 
+    "header"
+    "tags  "
+    "links ";
+  }
+}
+
+.links {
+  grid-area: links; 
+  display: flex;
+  align-self: center;
+  flex-direction: row;
+  justify-self: stretch;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.link {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  text-wrap: nowrap;
+  margin-top: 2px;
+  padding: 4px;
+  border: 1px solid gold;
+  border-right: none;
+  border-left: none;
+  cursor: pointer;
+}
+.link .name {
+  user-select: none;
+  font-size: 1.2em;
+}
+.link a {
+  font-size: 0.5em;
+}
+ 
+h3 {margin: 0px;}
+h4 {margin: 0px;}
+.title {
+  font-size: 1.4em;
+  padding: 1ch 2ch;
+  padding-bottom: 0px;
+  margin: 0px;
+}
+.title h3 {  
+  color: gold;
+  text-decoration: underline;
+}
+.title h4 {  
+  color: #bebebe;
+}
+
+.portfolio_project:nth-child(2n+1) .alternate {
+  text-align: right;
+}
+
+.tags {
+  color: goldenrod;
+  font-style: italic;
+  font-weight: bold;
+  padding: 0.5ch;
+  padding-top: 0px;
+  padding-bottom: 2ch;
+}
+
+.description {
+  text-align: center;
+}
+
+.contents {
+  text-align: justify;
+  /* overflow-y: hidden; */
+  /* max-height: 1000000px; */
+  /* transition: max-height 1s; */
+}
+
+.rolledup {
+  display: none;
+  /* max-height: 0px; */
+}
+
+</style>

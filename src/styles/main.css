@@ -1,0 +1,29 @@
+:root {
+    background-color: #222;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0px 2%;
+}
+
+
+
+a {
+    color: goldenrod;
+}
+
+b {
+    color: gold;
+}
+.soft {
+    color: #b9b9b9;
+}
+
+.button {
+    color: gold;
+    font-size: 0.95em;
+    cursor: pointer;
+    user-select: none;
+}
+.button:hover {
+    background-color: #504400;
+}
