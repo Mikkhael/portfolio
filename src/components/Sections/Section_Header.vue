@@ -21,7 +21,7 @@ const [lang, strings] = use_lang({
 <header class="header">
   <h1 class="gold">Michał Gold</h1>
   <div class="main_img">
-    <img src="/favicon.ico">
+    <img src="/imgs/ja.jpg">
   </div>
   <div class="info_grid">
     <!-- <div class="label">Telefon        </div> <div class="value">***REMOVED***                 </div> -->
@@ -67,6 +67,7 @@ const [lang, strings] = use_lang({
 }
 .main_img > img {
   height: 100%;
+  max-height: 200px;
 }
 
 .info_grid {

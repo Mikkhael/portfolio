@@ -14,7 +14,21 @@ const [lang, strings] = use_lang({
     'en':{
         title: 'Skills',
         content: /*html*/`
-        
+        <ul>
+            <li>Known programming languages:</li>
+            <ul>
+                <li>advanced: <b>${plangs_adv}</b></li>
+                <li>basic: <b>${plangs_bas}</b></li>
+            </ul>
+            <li>Experience working with <b>FPGA</b> and various EDA tools <b>${edas}</b></li>
+            <li>Programming microcontrollers <b>${mcs}</b></li>
+            <li>Familiarity wtth <b>GIT</b></li>
+            <li>Familiarity with <b>Matlab</b></li>
+            <li>Familiarity with relational databases - espessialy <b>SQLite</b></li>
+            <li>Basic knowledge of programming <b>PLCs</b> and <b>industrial robots</b></li>
+            <li>Native language - Polish</li>
+            <li>Advanced knowledge of English</li>
+        </ul>
         `,
     },
     'pl':{
@@ -26,7 +40,7 @@ const [lang, strings] = use_lang({
                 <li>poziom zaawansowany: <b>${plangs_adv}</b></li>
                 <li>poziom podstawowy: <b>${plangs_bas}</b></li>
             </ul>
-            <li>Doświadczenie z FPGA i podstawowe zaznajomienie z różnymi narzędziami EDA <b>${edas}</b></li>
+            <li>Doświadczenie z <b>FPGA</b> i podstawowe zaznajomienie z różnymi narzędziami EDA <b>${edas}</b></li>
             <li>Programowanie mikrokontrolerów <b>${mcs}</b></li>
             <li>Zaznajomienie z narzędziem <b>GIT</b></li>
             <li>Znajomość środowiska <b>Matlab</b></li>
