@@ -50,6 +50,7 @@ class ProjectContent {
         return this.content_def.links.map(x => {
             return {
                 href: x.href,
+                print: x.href.startsWith('http'),
                 name: 
                     x.type === 'thesis'  ? (lang === 'pl' ? 'Praca Dyplomowa'   : 'Thesis') :
                     x.type === 'tslides' ? (lang === 'pl' ? 'Slajdy do p. dyp.' : 'Slides for thesis')  :

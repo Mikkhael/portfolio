@@ -33,7 +33,7 @@ const [lang, strings] = use_lang({
 <style scoped>
 
 .portfolio_section {
-  border: 1px dotted gold;
+  border: 1px dotted var(--color-primary);
   border-left:  none;
   border-right: none;
   border-top:   none;
@@ -42,7 +42,7 @@ const [lang, strings] = use_lang({
 }
     
 .title {
-  color: gold;
+  color: var(--color-primary);
   font-size: 1.5em;
   margin-left: 4ch;
   /* text-decoration: underline; */

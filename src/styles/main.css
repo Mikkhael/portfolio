@@ -4,8 +4,9 @@
     font-family: 'Courier New', Courier, monospace;
     padding: 0px 2%;
     font-size: 0.9em;
+    --color-primary:  gold;
+    --color-secondary:goldenrod;
 }
-
 @media screen and (max-width: 400px) {
     :root {
         padding: 0px  1px;
@@ -15,22 +16,41 @@
 
 
 a {
-    color: goldenrod;
+    color: var(--color-secondary);
 }
 
 b {
-    color: gold;
+    color: var(--color-primary);
 }
 .soft {
     color: #b9b9b9;
 }
 
 .button {
-    color: gold;
+    color: var(--color-primary);
     font-size: 0.95em;
     cursor: pointer;
     user-select: none;
 }
 .button:hover {
     background-color: #504400;
+}
+
+
+@media print {
+    :root {
+        background-color: white;
+        font-family: 'Calibri';
+        --color-primary:  #756400;
+        --color-secondary:#6b510f;
+    }
+    .noprint {
+        display: none !important;
+    }
+    .button {
+        display: none;
+    }
+    .pagebreak {
+      break-before: page;
+    }
 }

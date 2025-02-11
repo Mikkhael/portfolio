@@ -10,7 +10,7 @@ const default_language = 'pl';
 
 <template>
 
-    <div class="lang_select_bar">
+    <div class="lang_select_bar noprint">
         <a class="flag" v-for="flag in LANGS" :class="{chosen: flag === lang}" :href="'/'+(flag === default_language ? '' : flag)">
             <img :src="'/flags/' + flag + '.svg'" :alt="flag">
         </a>
@@ -34,7 +34,7 @@ const default_language = 'pl';
     height: 100%;
 }
 .flag.chosen {
-    border-bottom: 3px solid gold;
+    border-bottom: 3px solid var(--color-primary);
 }
 
 </style>

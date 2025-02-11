@@ -13,7 +13,7 @@ import { inject, onMounted, onUnmounted } from "vue";
 
 /**
  * @template T
- * @param {LangSpecyfic<T> | undefined | string} value
+ * @param {LangSpecyfic<T> | undefined | string } value
  * @param {Lang} lang 
  */
 export function get_lang(value, lang = 'en') {

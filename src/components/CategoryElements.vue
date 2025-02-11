@@ -61,7 +61,7 @@ const props = defineProps({
 }
 .title {
   font-size: 1.1em;
-  color: gold;
+  color: var(--color-primary);
 }
 .subtitle {
   font-style: italic;

@@ -1,17 +1,24 @@
 <script setup>
 
-import { use_lang } from '../common';
+import { use_lang, get_lang } from '../common';
+
+//@ts-ignore
+const aux_header_json = import.meta.glob('./aux_header.json', {eager: true})['./aux_header.json']?.default ?? [];
 
 const [lang, strings] = use_lang({
   'en': {
     bday: 'Birthday',
     city: ['City', 'Gliwice, Poland'],
+
   },
   'pl': {
     bday: 'Urodziny',
     city: ['Miasto', 'Gliwice, Polska'],
   }
 });
+
+/**@type {[string, string][]} */
+const aux_infos = aux_header_json.map(x => get_lang(x, lang));
 
 </script>
 
@@ -27,8 +34,13 @@ const [lang, strings] = use_lang({
     <!-- <div class="label">Telefon        </div> <div class="value">***REMOVED***                 </div> -->
     <div class="label">{{ strings.bday }}     </div> <div class="value"> 30.11.1999 </div>
     <div class="label">{{ strings.city[0] }} </div> <div class="value">{{ strings.city[1] }}</div>
-    <div class="label">E-mail         </div> <div class="value"><a href="mailto:mikkael.gold@gmail.com">mikkael.gold@gmail.com</a></div>
-    <div class="label">GitHub         </div> <div class="value"><a href="https://github.com/Mikkhael">github.com/Mikkhael</a></div>
+    
+    <template v-for="aux_info in aux_infos">
+      <div class="label">{{ aux_info[0] }} </div> <div class="value">{{ aux_info[1] }}</div>
+    </template>
+
+    <div class="label">E-mail </div> <div class="value"><a href="mailto:mikkael.gold@gmail.com">mikkael.gold@gmail.com</a></div>
+    <div class="label">GitHub </div> <div class="value"><a href="https://github.com/Mikkhael">github.com/Mikkhael</a></div>
   </div>
 </header>
 
@@ -52,8 +64,8 @@ const [lang, strings] = use_lang({
 }
 
 .gold {
-  color: gold;
-  text-shadow: 2px 2px goldenrod;
+  color: var(--color-primary);
+  text-shadow: 2px 2px var(--color-secondary);
   font-family: sans-serif;
   font-size: 3em;
   margin: 0px;
@@ -76,7 +88,7 @@ const [lang, strings] = use_lang({
   grid-template: auto / auto auto;
 }
 .info_grid > .label {
-  color: gold;
+  color: var(--color-primary);
   text-align: right;
 }
 

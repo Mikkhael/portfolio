@@ -55,9 +55,13 @@ const CatSectionContents = CatSections.map(x => x[1].get_for_lang(lang));
     <Section_OMnie />
     <Section_Skills />
   </section>
+  
+  <div class="pagebreak"></div>
 
 
   <CategoryElements v-for="section in CatSectionContents" :title="section.title" :elems="section.elems"/>
+
+  <div class="pagebreak"></div>
 
   <h1 id="my_projects" class="subheader">
     {{ strings.my_projects }}
@@ -78,10 +82,10 @@ const CatSectionContents = CatSections.map(x => x[1].get_for_lang(lang));
 }
 
 .subheader {
-  color: gold;
+  color: var(--color-primary);
   text-align: center;
   grid-column: 1 / -1;
-  border: 2px dashed gold;
+  border: 2px dashed var(--color-primary);
   border-left: none;
   border-right: none;
 }
@@ -100,6 +104,12 @@ const CatSectionContents = CatSections.map(x => x[1].get_for_lang(lang));
 .inheader_button {
   font-size: 0.5em;
   font-weight: normal;
+}
+
+@media print {
+  .subsection {
+    flex-wrap: wrap;
+  }
 }
 
 

@@ -17,7 +17,7 @@ const [lang, strings] = use_lang({
 });
 
 /**
- * @typedef {{href: string, name: string}} LinkDef
+ * @typedef {{href: string, name: string, print?: boolean}} LinkDef
  */
 
 const props = defineProps({
@@ -57,7 +57,7 @@ const extended = ref(true);
           </section>
 
           <section class="links">
-            <div v-for="link in props.links" class="link" @click="goto(link.href)">
+            <div v-for="link in props.links" class="link" @click="goto(link.href)" :class="{noprint: !link.print}">
               <div class="name">🔗{{ link.name }}</div>
               <a :href="link.href" target="_blank">{{ link.href }}</a>
             </div>
@@ -74,7 +74,7 @@ const extended = ref(true);
 
         <div class="extender button" @click="extend(!extended)" :class="{rolledup: extended}">{{ extended ? strings.show_less : strings.show_more }}...</div>
 
-        <section class="contents" :class="{rolledup: !extended}">
+        <section class="contents noprint" :class="{rolledup: !extended}">
             <slot name="contents"></slot>
             <div class="extender button" @click="extend(false)">{{ strings.show_less }}...</div>
         </section>
@@ -86,7 +86,7 @@ const extended = ref(true);
 <style scoped>
 
 .portfolio_project {
-  border: 3px solid gold;
+  border: 3px solid var(--color-primary);
   border-left: none;
   border-right: none;
   border-top: none;
@@ -129,7 +129,7 @@ header {
   text-wrap: nowrap;
   margin-top: 2px;
   padding: 4px;
-  border: 1px solid gold;
+  border: 1px solid var(--color-primary);
   border-right: none;
   border-left: none;
   cursor: pointer;
@@ -141,6 +141,15 @@ header {
 .link a {
   font-size: 0.5em;
 }
+@media print {
+  .link .name {
+    font-size: 0.8em;
+  }
+  .link a {
+    font-size: 0.9em;
+  }
+}
+
  
 h3 {margin: 0px;}
 h4 {margin: 0px;}
@@ -151,7 +160,7 @@ h4 {margin: 0px;}
   margin: 0px;
 }
 .title h3 {  
-  color: gold;
+  color: var(--color-primary);
   text-decoration: underline;
 }
 .title h4 {  
@@ -163,7 +172,7 @@ h4 {margin: 0px;}
 }
 
 .tags {
-  color: goldenrod;
+  color: var(--color-secondary);
   font-style: italic;
   font-weight: bold;
   padding: 0.5ch;
@@ -179,7 +188,7 @@ h4 {margin: 0px;}
 .contents {
   text-align: justify;
   margin-top: 5px;
-  border-top: 1px dashed gold;
+  border-top: 1px dashed var(--color-primary);
   /* overflow-y: hidden; */
   /* max-height: 1000000px; */
   /* transition: max-height 1s; */
