@@ -4,8 +4,7 @@ import LangSelect from './components/LangSelect.vue';
 
 import Section_Header from './components/Sections/Section_Header.vue';
 import Section_OMnie from './components/Sections/Section_OMnie.vue';
-
-import PortfolioProject from './components/PortfolioProject.vue';
+import Section_Skills from './components/Sections/Section_Skills.vue';
 
 import PortfolioProjectAuto from './components/PortfolioProjectAuto.vue';
 import Projects from './components/Projects';
@@ -51,25 +50,21 @@ const CatSectionContents = CatSections.map(x => x[1].get_for_lang(lang));
   <LangSelect />
 
   <Section_Header class="header" />
-  <Section_OMnie />
+
+  <section class="subsection">
+    <Section_OMnie />
+    <Section_Skills />
+  </section>
+
 
   <CategoryElements v-for="section in CatSectionContents" :title="section.title" :elems="section.elems"/>
-
 
   <h1 id="my_projects" class="subheader">
     {{ strings.my_projects }}
     <div class="inheader_button button" @click="extend_all_projects(!is_all_extended); is_all_extended = !is_all_extended">{{ extend_all_text }}</div>
   </h1>
 
-
-  <!-- <Project_BranchPredictor /> -->
-  <!-- <Project_Mastermind /> -->
   <PortfolioProjectAuto v-for="content in ProjectContents" :content="content" />
-
-  <PortfolioProject
-    title="Aplikacja do zarządzania bazą danych warsztatu samochodowego">
-  </PortfolioProject>
-
 
 </div>
 
@@ -89,6 +84,17 @@ const CatSectionContents = CatSections.map(x => x[1].get_for_lang(lang));
   border: 2px dashed gold;
   border-left: none;
   border-right: none;
+}
+
+.subsection {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+@media screen and (max-width: 700px) {
+  .subsection {
+    flex-wrap: wrap;
+  }
 }
 
 .inheader_button {

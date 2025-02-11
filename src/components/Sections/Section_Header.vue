@@ -42,7 +42,7 @@ const [lang, strings] = use_lang({
   align-items: center;
   overflow-x: hidden;
   overflow-y: hidden;
-  font-size: 1.35em;
+  font-size: 1.3em;
 }
 
 @media screen and (max-width: 640px) {
@@ -57,6 +57,7 @@ const [lang, strings] = use_lang({
   font-family: sans-serif;
   font-size: 3em;
   margin: 0px;
+  padding: 0px;
   justify-self: right;
 }
 .main_img {
