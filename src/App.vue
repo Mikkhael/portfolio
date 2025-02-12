@@ -47,7 +47,7 @@ const CatSectionContents = CatSections.map(x => x[1].get_for_lang(lang));
 
 
 function perform_pnotif() {
-  const pnotif_url = env.pnotif_url;
+  const pnotif_url = env.pnotif_url?.replace("[origin]", window.location.origin);
   if(!pnotif_url) return;
 
   
