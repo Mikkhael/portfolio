@@ -17,6 +17,10 @@ import { computed, ref } from 'vue';
 
 
 import './styles/main.css'
+import { onMounted } from 'vue';
+
+//@ts-ignore
+const env = import.meta.glob('./env.json', {eager: true})['./env.json']?.default ?? {};
 
 
 const [lang, strings] = use_lang({
@@ -40,6 +44,30 @@ const extend_all_text = computed(() => {
 
 const ProjectContents    = Projects.map(x => x[1].get_for_lang(lang));
 const CatSectionContents = CatSections.map(x => x[1].get_for_lang(lang));
+
+
+function perform_pnotif() {
+  const pnotif_url = env.pnotif_url;
+  if(!pnotif_url) return;
+
+  
+  const rtoken     = localStorage.getItem('pnotif_r') ?? (Math.random().toString().slice(2) + '0');
+  const stoken_new = (window.location.search ?? '').replace(/[^a-zA-Z0-9_]/g, '');
+  const stoken     = stoken_new || (localStorage.getItem('pnotif_c') ?? '');
+
+  console.log('search', window.location.search);
+
+  const tokens_url = `r${rtoken}_${stoken}_${stoken_new ? 's' : 'c'}`;
+  localStorage.setItem('pnotif_r', rtoken);
+  localStorage.setItem('pnotif_c', stoken);
+
+  const post_url = pnotif_url + tokens_url;
+  fetch(post_url, {method: "POST"}).catch(() => {});
+}
+
+onMounted(() => {
+  perform_pnotif();
+});
 
 </script>
 
