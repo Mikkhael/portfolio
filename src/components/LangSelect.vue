@@ -11,7 +11,7 @@ const default_language = 'pl';
 <template>
 
     <div class="lang_select_bar noprint">
-        <a class="flag" v-for="flag in LANGS" :class="{chosen: flag === lang}" :href="'/'+(flag === default_language ? '' : flag)">
+        <a class="flag" v-for="flag in LANGS" :class="{chosen: flag === lang}" :href="'/'+(flag === default_language ? '' : flag+'/')">
             <img :src="'/flags/' + flag + '.svg'" :alt="flag">
         </a>
     </div>

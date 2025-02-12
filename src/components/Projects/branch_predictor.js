@@ -86,7 +86,7 @@ const content = new ProjectContent({
         prezentujący za pomocą <b>pliku HTML wgląd do jego działania</b>, z podziałem na cykle oraz etapy pipeline'u.
         <br>
         <br>
-        Bardziej rozbudowany opps struktury projektu, oraz jak można go uruchomić, znajduje się na GitHub'owym readme.
+        Bardziej rozbudowany opis struktury projektu, oraz jak można go uruchomić, znajduje się na GitHub'owym readme.
         `,
     }
 
