@@ -28,11 +28,13 @@ const [lang, strings] = use_lang({
     my_projects:  'My Projects',
     collapse_all: 'Collapse all',
     expand_all:   'Expand all',
+    online_version_desc: 'More extensive portfolio can be found over on',
   },
   'pl': {
     my_projects:  'Moje Projekty',
     collapse_all: 'Zwiń wszystkie',
     expand_all:   'Rozwiń wszystkie',
+    online_version_desc: 'Bardziej rozbudowane portfolio dostępne jest na',
   }
 });
 
@@ -79,6 +81,10 @@ onMounted(() => {
 
   <Section_Header class="header" />
 
+  <section class="online_version onlyprint" v-if="env.online_version_url">
+    {{ strings.online_version_desc }} <a :href="env.online_version_url">{{ env.online_version_url }}</a>
+  </section>
+
   <section class="subsection">
     <Section_OMnie />
     <Section_Skills />
@@ -114,6 +120,15 @@ onMounted(() => {
   text-align: center;
   grid-column: 1 / -1;
   border: 2px dashed var(--color-primary);
+  border-left: none;
+  border-right: none;
+}
+
+.online_version {
+  text-align: center;
+  font-size:  1.1em;
+  padding: 1ch;
+  border: 1px solid black;
   border-left: none;
   border-right: none;
 }

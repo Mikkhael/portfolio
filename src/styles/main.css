@@ -37,12 +37,19 @@ b {
 }
 
 
+.onlyprint {
+    display: none;
+}
+
 @media print {
     :root {
         background-color: white;
         font-family: 'Calibri';
         --color-primary:  #756400;
         --color-secondary:#6b510f;
+    }
+    .onlyprint {
+        display: unset;
     }
     .noprint {
         display: none !important;
