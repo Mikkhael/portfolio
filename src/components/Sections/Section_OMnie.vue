@@ -10,10 +10,12 @@ const [lang, strings] = use_lang({
             <b>Programming enthusiast</b> - mainly <b>C++</b> and <b>JavaScript</b>
             <span class="soft"> (completely unrelated languages, but that's how it turned out)</span>. <br>
             My first contact with programming was in middle school, and I've been writing code ever since. <br>
-            I treat programming as a very complex logical puzzle <span class="soft"> (and <b>I love logical puzzles</b>)</span>. <br>
+            I treat programming as a very complex logical puzzle <span class="soft"> (and <b>I love logical puzzles</b>)</span>.
+            <br>
             From time to time I solve tasks related to <b>algorithmics</b>, on sites such as
-            <b>CodeWars</b> <a class="noprint" target="_blank" href="https://www.codewars.com/users/Mikkael">[my profile]</a>
-            or <b>LeetCode</b>. <br>
+            <b>CodeWars</b>   <a class="noprint" target="_blank" href="https://www.codewars.com/users/Mikkael"  >[my profile]</a> and (since recently)
+            <b>CodeForces</b> <a class="noprint" target="_blank" href="https://codeforces.com/profile/Mikkhaeel">[my profile]</a>.
+            <br>
             I also find <b>Maths</b> to be very fun.
         </p>
         <p>
@@ -38,10 +40,12 @@ const [lang, strings] = use_lang({
             <b>Pasjonat programowania</b> - głównie <b>C++</b> oraz <b>JavaScript</b> 
             <span class="soft"> (kompletnie niezwiązane ze sobą języki, ale tak wyszło)</span>. <br>
             Pierwszą styczność miałem z programowaniem w gimnazjum, i od tamtego czasu ciągle się rozwijam. <br>
-            Traktuję programowanie jako bardzo rozbudowaną zagadkę logiczną <span class="soft">(a <b>uwielbiam zagadki logiczne</b>)</span>. <br>
+            Traktuję programowanie jako bardzo rozbudowaną zagadkę logiczną <span class="soft">(a <b>uwielbiam zagadki logiczne</b>)</span>.
+            <br>
             Od czasu do czasu rozwiązuję zadania związane z <b>algorytmiką</b>, na takich stronach jak np.
-            <b>CodeWars</b> <a class="noprint" target="_blank" href="https://www.codewars.com/users/Mikkael">[mój profil]</a> 
-            czy <b>LeetCode</b>. <br>
+            <b>CodeWars</b>   <a class="noprint" target="_blank" href="https://www.codewars.com/users/Mikkael"  >[mój profil]</a> i (od niedawna)
+            <b>CodeForces</b> <a class="noprint" target="_blank" href="https://codeforces.com/profile/Mikkhaeel">[mój profil]</a>.
+            <br>
             <b>Matematyka</b> mi w niczym nie straszna.
         </p>
         <p>

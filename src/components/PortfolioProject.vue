@@ -32,10 +32,6 @@ const props = defineProps({
 
 // const tags_html = computed(() => (props.tags ?? []).map(x => `<span>${x}</span>`).join(', '));
 
-function goto(href) {
-  window.open(href, '_blank');
-}
-
 function extend(value) {
   extended.value = value;
 }
@@ -57,10 +53,10 @@ const extended = ref(true);
           </section>
 
           <section class="links">
-            <div v-for="link in props.links" class="link" @click="goto(link.href)" :class="{noprint: !link.print}">
+            <a v-for="link in props.links" class="link" target="_blank" :href="link.href" :class="{noprint: !link.print}">
               <div class="name">🔗{{ link.name }}</div>
-              <a :href="link.href" target="_blank">{{ link.href }}</a>
-            </div>
+              <div class="url" >{{ link.href }}</div>
+            </a>
           </section>
 
           <!-- <section class="tags" v-html="tags_html"></section> -->
@@ -132,20 +128,22 @@ header {
   border: 1px solid var(--color-primary);
   border-right: none;
   border-left: none;
-  cursor: pointer;
+  text-decoration: none;
 }
 .link .name {
+  color: white;
   user-select: none;
   font-size: 1.2em;
 }
-.link a {
+.link .url {
   font-size: 0.5em;
+  text-decoration: underline;
 }
 @media print {
   .link .name {
     font-size: 0.8em;
   }
-  .link a {
+  .link .url {
     font-size: 0.9em;
   }
 }
