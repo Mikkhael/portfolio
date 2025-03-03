@@ -29,7 +29,7 @@ const [lang, strings] = use_lang({
             <b>I like to learn</b> <span class="soft">(in my free time I like to watch e.g. recordings from <b>CppCon</b> conferences; I follow several blogs about programming)</span>. <br>
             I am willing to learn any technology if it is required of me. <b>I am not afraid to read documentation</b>. </p>
         <p>
-            On the more non-engeenering side: I'm loosely interested in linguistics and Japanese culture.
+            On the more non-engineering side: I'm loosely interested in linguistics and Japanese culture.
         </p>
         `,
     },

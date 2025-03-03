@@ -32,7 +32,7 @@ const content = new CatSectionContent({
     over:  {'en': '1.05.2023 - 8.07.2024 (3 semesters)',
             'pl': '1 maja 2023 - 8 lipca 2024 (3 semestry)',
     },
-    title: {'en': polsl_prefix_en + '"Microinformatics of Embeded Systems"',
+    title: {'en': polsl_prefix_en + '"Microinformatics of Embedded Systems"',
             'pl': polsl_prefix_pl + '“Mikroinformatyka Systemów Cyfrowych”',
     },
     sub:   {'en': 'Master\'s',

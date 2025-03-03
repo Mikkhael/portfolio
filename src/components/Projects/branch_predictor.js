@@ -28,7 +28,7 @@ const content = new ProjectContent({
     imgs: [
         { src:  '/imgs/pipeline_visualizer.png',
           desc: {
-            'en': 'Sample fragment of pipline visualization\'u',
+            'en': 'Sample fragment of pipeline visualization\'u',
             'pl': 'Przykładowy fragment wizualizacji pipeline\'u',}},
         { src:  '/imgs/schemat_procesora.png',
           desc: {
@@ -51,7 +51,7 @@ const content = new ProjectContent({
     },
     content: {
         'en': /*html*/`
-        The module was <b>integrated with an existing CPU project</b>, created as part of other master's theses.
+        The module was <b>integrated with an already existing RISC&#8209;V CPU project</b>, created as part of other master's theses, by other students.
         <br>
         <br>
         I devoted a significant part of my work not only to creating the predictor, but also to <b>analyzing and repairing the RISC&#8209;V processor project</b>,
@@ -71,12 +71,14 @@ const content = new ProjectContent({
         A more detailed description of the project structure, and how could you run the project yourself, is over in GitHub's readme.
         `,
         'pl': /*html*/`
-        Moduł <b>zintegrowano z istniejącym już projektem procesora</b>, stworzonym w ramach innych prac magisterskich.
+        Moduł <b>zintegrowano z istniejącym już projektem procesora</b>, stworzonym w ramach innych prac magisterskich, przez innych studentów.
+        <br>
+        <br>
         Znaczną część pracy poświęciłem nie tylko na tworzenie predyktora, ale na <b>analizę i naprawę projektu procesora RISC&#8209;V</b>,
         gdyż okazał się on być <b>pełny błędów oraz niezgodności z dostarczoną dokumentacją</b>.
         <br>
         <br>
-        Oprócz samego predtktora, stworzone zostało <b>rozbudowane środowisko testowe</b>, 
+        Oprócz samego predyktora, stworzone zostało <b>rozbudowane środowisko testowe</b>, 
         pozwalające na w pełni zautomatyzowaną kompilację programów, uruchamianie symulacji oraz tworzenie raportów. 
         Na środowisko składają się <b>skrypty (napisane w języku JavaScript) oraz plik Makefile</b>, pozwalający na wybór konfiguracji, 
         z jakim wariantem predyktora należy skompilować projekt, oraz który z programów testowych uruchomić.

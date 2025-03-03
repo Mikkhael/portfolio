@@ -1,7 +1,7 @@
 import CatSectionContent from "../CatSectionContent";
 
 const content = new CatSectionContent({
-    title: {'en': 'Certificates & Achivements',
+    title: {'en': 'Certificates & Achievements',
             'pl': 'Certyfikaty & Osiągnięcia',
     },
     elems: [
@@ -23,8 +23,8 @@ const content = new CatSectionContent({
     over:  {'en': 'November 2022 - February 2023, at Silesian University of Technology in Gliwice',
             'pl': 'Listopad 2022 - Luty 2023, na Politechnice Śląskiej w Gliwicach',
     },
-    title: {'en': 'Introduction to PCB Designe Certification Course',
-            'pl': 'Introduction to PCB Designe Certification Course',
+    title: {'en': 'Introduction to PCB Design Certification Course',
+            'pl': 'Introduction to PCB Design Certification Course',
     },
     sub:   {'en': 'Course by Siemens',
             'pl': 'Kurs organizowany przez Siemens\'a',
