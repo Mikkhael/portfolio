@@ -51,12 +51,13 @@ class ProjectContent {
             return {
                 href: x.href,
                 print: x.href.startsWith('http'),
+                plonly: x.type !== "github",
                 name: 
                     x.type === 'thesis'  ? (lang === 'pl' ? 'Praca Dyplomowa'   : 'Thesis') :
                     x.type === 'tslides' ? (lang === 'pl' ? 'Slajdy do p. dyp.' : 'Slides for thesis')  :
                     x.type === 'slides'  ? (lang === 'pl' ? 'Slajdy' : 'Slides')  :
                     x.type === 'raport'  ? (lang === 'pl' ? 'Sprawozdanie' : 'Raport')  :
-                                        "GitHub"
+                                        "GitHub",
             }
         });
     }

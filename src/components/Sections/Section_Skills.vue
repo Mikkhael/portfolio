@@ -57,7 +57,7 @@ const [lang, strings] = use_lang({
 
 
 <PortfolioSection :title="strings.title" class="section">
-    <div v-html="strings.content"></div>
+    <div v-html="strings.content" class="ul_container"></div>
 </PortfolioSection>
 
 </template>
@@ -65,5 +65,8 @@ const [lang, strings] = use_lang({
 <style scoped>
 .section {
     font-size: 0.9em;
+}
+.ul_container > :deep(ul) {
+    padding-left: 20px;
 }
 </style>

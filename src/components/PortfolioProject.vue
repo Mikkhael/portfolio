@@ -17,7 +17,7 @@ const [lang, strings] = use_lang({
 });
 
 /**
- * @typedef {{href: string, name: string, print?: boolean}} LinkDef
+ * @typedef {{href: string, name: string, print?: boolean, plonly: boolean}} LinkDef
  */
 
 const props = defineProps({
@@ -54,7 +54,7 @@ const extended = ref(true);
 
           <section class="links">
             <a v-for="link in props.links" class="link" target="_blank" :href="link.href" :class="{noprint: !link.print}">
-              <div class="name">🔗{{ link.name }}</div>
+              <div class="name">🔗{{ link.name }} {{ link.plonly && lang !== 'pl' ? "(PL)" : '' }}</div>
               <div class="url" >{{ link.href }}</div>
             </a>
           </section>
@@ -181,6 +181,12 @@ h4 {margin: 0px;}
 .description {
   font-size: 1.1em;
   text-align: center;
+  padding: 10px;
+}
+@media print {
+  .description {
+    padding: 0px;
+  }
 }
 
 .contents {

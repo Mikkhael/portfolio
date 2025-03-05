@@ -55,11 +55,22 @@ const aux_infos = aux_header_json.map(x => get_lang(x, lang));
   overflow-x: hidden;
   overflow-y: hidden;
   font-size: 1.3em;
+  border: 1px solid var(--color-primary);
+  border-left:  none;
+  border-right: none;
+  padding: 5px;
+  background-color: #f1ed1409;
 }
 
 @media screen and (max-width: 640px) {
   .header {
     grid-template: auto / auto;
+  }
+}
+@media print {
+  .header {
+    background-color: none;
+    border: none;
   }
 }
 
@@ -79,7 +90,7 @@ const aux_infos = aux_header_json.map(x => get_lang(x, lang));
 }
 .main_img > img {
   height: 100%;
-  max-height: 200px;
+  max-height: 300px;
 }
 
 .info_grid {

@@ -67,8 +67,25 @@ function perform_pnotif() {
   fetch(post_url, {method: "POST"}).catch(() => {});
 }
 
+
+const print_url_base = computed(() => env.online_version_url + (lang != 'pl' ? `/${lang}` : ''));
+
+function get_print_url() {
+  const search  = window.location.search;
+  const full    = print_url_base.value + search;
+  // const display = env.online_version_url;
+  const display = full;
+  return {full, display};
+}
+
+const print_url_full    = ref(print_url_base.value);
+const print_url_display = ref(print_url_base.value);
+
 onMounted(() => {
   perform_pnotif();
+  const print_url = get_print_url();
+  print_url_full.value    = print_url.full;
+  print_url_display.value = print_url.display;
 });
 
 </script>
@@ -81,8 +98,8 @@ onMounted(() => {
 
   <Section_Header class="header" />
 
-  <section class="online_version onlyprint" v-if="env.online_version_url">
-    {{ strings.online_version_desc }} <a :href="env.online_version_url">{{ env.online_version_url }}</a>
+  <section class="online_version onlyprint" v-if="print_url_display">
+    {{ strings.online_version_desc }} <a :href="print_url_full">{{ print_url_display }}</a>
   </section>
 
   <section class="subsection">
